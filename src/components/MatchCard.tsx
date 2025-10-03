@@ -14,7 +14,7 @@ export default function MatchCard({
           {m.team1?.name} - {m.team2?.name}
         </div>
         <div className="text-sm text-gray-600">
-          {new Date(m.date).toLocaleString("ar-EG")}
+          {new Date(m.date).toLocaleDateString("ar-EG")}
         </div>
       </div>
       {showScores &&

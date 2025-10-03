@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'we-league-2026',
+  title: 'We League 2026',
 
   projectId: 'lokqj071',
   dataset: 'production',

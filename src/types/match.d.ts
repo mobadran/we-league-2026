@@ -12,13 +12,7 @@ export interface Match {
     name: string;
     logo: string;
   };
-  image: {
-    _id: string;
-    asset: {
-      _id: string;
-      url: string;
-    };
-  };
+  image: string;
   scoreTeam1: number;
   scoreTeam2: number;
 }

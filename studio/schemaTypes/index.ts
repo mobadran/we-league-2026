@@ -1,5 +1,5 @@
-import {matchType} from './matchType'
-import {teamType} from './teamType'
-import {playerType} from './playerType'
+import {matchType} from './match.type'
+import {teamType} from './team.type'
+import {playerType} from './player.type'
 
 export const schemaTypes = [matchType, teamType, playerType]

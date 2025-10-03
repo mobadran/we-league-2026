@@ -8,8 +8,9 @@ export default function NextMatch({ match }: { match: Match }) {
     <div className="card flex flex-col md:flex-row items-center gap-4">
       {match.image && (
         <Image
-          src={match.image.asset?.url}
+          src={match.image}
           alt="banner"
+          priority
           width={500}
           height={500}
           className="w-full md:w-1/3 rounded"
@@ -18,10 +19,10 @@ export default function NextMatch({ match }: { match: Match }) {
       <div className="flex-1">
         <h1 className="text-2xl font-bold">المباراة القادمة</h1>
         <div className="mt-2 text-lg font-semibold">
-          {match.team1?.name} vs {match.team2?.name}
+          {match.team1?.name} X {match.team2?.name}
         </div>
         <div className="mt-1 text-sm text-gray-600">
-          {new Date(match.date).toLocaleString("ar-EG")}
+          {new Date(match.date).toLocaleDateString("ar-EG")}
         </div>
       </div>
     </div>
