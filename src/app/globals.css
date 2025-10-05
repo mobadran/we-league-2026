@@ -1,43 +1,22 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #f8fafc;
-  --foreground: #171717;
-  --we-blue: #0263e0;
+@theme {
+  /* --color-primary: #000; */
+  --color-primary: #2563eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  background: linear-gradient(to bottom right, var(--color-primary), #1e40af);
+  color: white;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Noto Naskh Arabic",
-    "Noto Sans Arabic",
-    sans-serif;
+/* Basic section padding and global feel */
+section {
+  @apply px-6 py-16 md:px-20;
 }
 
-html,
-body {
-  height: 100%;
-}
-
-h1,
-h2,
-h3 {
-  color: var(--we-blue);
-}
-
-/* Cards */
-.card {
-  @apply bg-white rounded-2xl shadow p-4;
+h2 {
+  @apply mb-6 text-3xl font-bold;
 }
