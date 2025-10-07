@@ -20,8 +20,20 @@ export const matchType = defineType({
     },
   },
   fields: [
-    defineField({name: 'team1', title: 'الفريق الأول', type: 'reference', to: [{type: 'team'}]}),
-    defineField({name: 'team2', title: 'الفريق الثاني', type: 'reference', to: [{type: 'team'}]}),
+    defineField({
+      name: 'team1',
+      title: 'الفريق الأول',
+      type: 'reference',
+      to: [{type: 'team'}],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'team2',
+      title: 'الفريق الثاني',
+      type: 'reference',
+      to: [{type: 'team'}],
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'slug',
       title: 'الاسم في الرابط',
@@ -32,10 +44,32 @@ export const matchType = defineType({
 
         slugify: (input) => String(input).trim().replace(/\s+/g, '-'),
       },
+      validation: (Rule) => Rule.required(),
     }),
-    defineField({name: 'date', title: 'موعد المباراة', type: 'date'}),
+    defineField({
+      name: 'date',
+      title: 'موعد المباراة',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({name: 'image', title: 'صورة / بانر', type: 'image'}),
     defineField({name: 'scoreTeam1', title: 'نتيجة الفريق الأول', type: 'number'}),
     defineField({name: 'scoreTeam2', title: 'نتيجة الفريق الثاني', type: 'number'}),
+    defineField({name: 'wentToPenalties', title: 'وصلت لركلات الترجيح؟', type: 'boolean'}),
+    defineField({name: 'penaltyTeam1', title: 'ركلات الترجيح للفريق الأول', type: 'number'}),
+    defineField({name: 'penaltyTeam2', title: 'ركلات الترجيح للفريق الثاني', type: 'number'}),
+    defineField({
+      name: 'videos',
+      title: 'فيديوهات المباراة',
+      type: 'array',
+      of: [
+        {
+          type: 'file',
+          options: {
+            accept: 'video/*',
+          },
+        },
+      ],
+    }),
   ],
 })
